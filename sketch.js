@@ -1,4 +1,4 @@
-const content = ['Circles', 'Fractal tree']
+const content = ['Circles', 'Fractal tree', 'Shapes']
 
 for(let i = 0; i < content.length; i++){
     const div = document.createElement('div');
