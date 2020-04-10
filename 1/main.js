@@ -67,6 +67,16 @@ function initializeSliders(){
 function readAllSliderValues(){
     angle = angleSlider.value();
     startingBranchLength = startingBranchLengthSlider.value();
+
+    if(startingBranchLength != minBranchLengthSlider.elt.max)
+        adjustMinBranchLengthSlider();
+
     minBranchLength = minBranchLengthSlider.value();
     branchLengthMultiplier = branchLengthMultiplierSlider.value();
+}
+
+function adjustMinBranchLengthSlider(){
+    const ratio = minBranchLength / Number(minBranchLengthSlider.elt.max);
+    minBranchLengthSlider.elt.max = startingBranchLength;
+    minBranchLengthSlider.value(startingBranchLength * ratio);
 }
